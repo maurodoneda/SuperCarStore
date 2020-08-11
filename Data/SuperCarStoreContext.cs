@@ -19,6 +19,9 @@ namespace SuperCarStore.Data
         {
         }
 
-        public System.Data.Entity.DbSet<SuperCarStore.Models.Car> Cars { get; set; }
+        public DbSet<SuperCarStore.Models.Car> Cars { get; set; }
+        public DbSet<SuperCarStore.Models.Customer> Customers { get; set; }
+        public DbSet<SuperCarStore.Models.Store> Stores { get; set; }
+        public DbSet<SuperCarStore.Models.MembershipType> MerbershipTypes { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace SuperCarStore.Models
     public class Car
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Make { get; set; }
         public string Model { get; set; }
         public DateTime Year { get; set; }
         public double HP { get; set; }
@@ -19,7 +19,7 @@ namespace SuperCarStore.Models
         public double SalePrice { get; set; }
         public double RentalPrice { get; set; }
         public string ImgUrl { get; set; }
-        public Store Store { get; set; }
-        public int StoreId { get; set; }
+        public ICollection<Store> Store { get; set; }
+       
     }
 }
