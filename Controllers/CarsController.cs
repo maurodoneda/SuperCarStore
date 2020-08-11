@@ -47,7 +47,7 @@ namespace SuperCarStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Make,Model,Year,HP,EngineSpec,FuelType,TopSpeed,ZeroTo60,SalePrice,RentalPrice,ImgUrl")] Car car)
+        public ActionResult Create([Bind(Include = "Id,Make,Model,Year,HP,EngineSpec,FuelType,TopSpeed,ZeroTo60,SalePrice,RentalPrice,ImgUrl,StoreId")] Car car)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace SuperCarStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Make,Model,Year,HP,EngineSpec,FuelType,TopSpeed,ZeroTo60,SalePrice,RentalPrice,ImgUrl")] Car car)
+        public ActionResult Edit([Bind(Include = "Id,Make,Model,Year,HP,EngineSpec,FuelType,TopSpeed,ZeroTo60,SalePrice,RentalPrice,ImgUrl,StoreId")] Car car)
         {
             if (ModelState.IsValid)
             {

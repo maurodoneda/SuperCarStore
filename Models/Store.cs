@@ -8,7 +8,8 @@ namespace SuperCarStore.Models
     public class Store
     {
         public int StoreId { get; set; }
-        public string Adress { get; set; }
+        public string City { get; set; }
+        public string Address { get; set; }
         public string PostCode { get; set; }
         public string Country { get; set; }
         public string Email { get; set; }

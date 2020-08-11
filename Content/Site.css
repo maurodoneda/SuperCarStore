@@ -1,13 +1,14 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
+  
+}*/
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -21,4 +22,105 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Rowdies:wght@400;700&family=Russo+One&display=swap');
+
+@font-face {
+    font-family: "Ferro Rosso";
+    src: url(/fonts/FerroRosso-0v5X.ttf) format("truetype");
+}
+@font-face {
+    font-family: "American";
+    src: url(/fonts/AmericanCaptain-MdEY.otf) format("truetype");
+}
+@font-face {
+    font-family: "Thunderbolt";
+    src: url(/fonts/ThunderboldDemo-qZ7q2.otf) format("truetype");
+}
+
+.imgCover {
+    background-image: url("/Content/imgs/super1.jpg");
+    height: 100vh;
+    width: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #ECE5F0;
+    display: block;
+    font-family: Thunderbolt;
+    /*font-family: 'Russo One', sans-serif;*/
+    filter: grayscale(40%);
+}
+
+.welcomeText {
+    position: relative;
+    top: 0;
+    font-weight: 500;
+    font-size: 55px;
+    color: dimgrey;
+    font-weight: bold;
+    transform: scale(1, 1.1);
+}
+
+
+    .welcomeText span {
+        font-weight: 500;
+        font-size: 60px;
+        font-family: 'Ferro Rosso';
+        color: #d00000;
+        font-weight: bolder;
+        font-style: normal;
+       
+    }
+
+.overlayText {
+    position: relative;
+    top: +70px;
+    left: 5px;
+    font-size: 70px;
+    color: red;
+    opacity: 0.10;
+    font-weight: bolder;
+    transform: scale(1, 1.3);
+}
+
+.subIntro, .underLine{
+    font-size: 30px;
+    color:darkred;
+}
+
+.navbar {
+    background-color: transparent;
+    background: transparent;
+    border-color: transparent;
+}
+
+
+.navbar-nav li {
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+div .cards {
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+    color: grey;
+    background-color: lightgray;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    box-sizing: content-box;
+    border-radius: 10px;
+}
+
+.icons {
+    display: flex;
+    align-self: center;
+    background-size: contain;
+    padding: 0;
+    width: 50px;
+    height: 50px;
 }

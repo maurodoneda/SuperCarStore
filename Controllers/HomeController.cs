@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperCarStore.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace SuperCarStore.Controllers
 {
     public class HomeController : Controller
     {
+        private SuperCarStoreContext db = new SuperCarStoreContext();
         public ActionResult Index()
         {
             return View();
@@ -25,6 +27,13 @@ namespace SuperCarStore.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Stores()
+        {
+            ViewBag.Message = "Check out our Stores around the world";
+                        
+            return View(db.Stores.ToList());
         }
     }
 }

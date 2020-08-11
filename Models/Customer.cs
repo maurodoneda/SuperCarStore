@@ -17,7 +17,7 @@ namespace SuperCarStore.Models
         public string Phone { get; set; }
         [Required]
         public DateTime DoB { get; set; }
-        public string Adress { get; set; }
+        public string Address { get; set; }
         public string PostCode { get; set; }
         public string Country { get; set; }
         public bool IsSubscribed { get; set; }

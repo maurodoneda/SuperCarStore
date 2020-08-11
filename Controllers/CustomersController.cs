@@ -49,7 +49,7 @@ namespace SuperCarStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerId,Name,Email,Phone,DoB,Adress,PostCode,Country,IsSubscribed,MembershipTypeId")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerId,Name,Email,Phone,DoB,Address,PostCode,Country,IsSubscribed,MembershipTypeId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace SuperCarStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerId,Name,Email,Phone,DoB,Adress,PostCode,Country,IsSubscribed,MembershipTypeId")] Customer customer)
+        public ActionResult Edit([Bind(Include = "CustomerId,Name,Email,Phone,DoB,Address,PostCode,Country,IsSubscribed,MembershipTypeId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
