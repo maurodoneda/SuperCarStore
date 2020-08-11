@@ -13,7 +13,7 @@ namespace SuperCarStore.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202008111404505_InitialCreate"; }
+            get { return "202008111625320_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

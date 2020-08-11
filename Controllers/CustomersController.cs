@@ -11,107 +11,112 @@ using SuperCarStore.Models;
 
 namespace SuperCarStore.Controllers
 {
-    public class CarsController : Controller
+    public class CustomersController : Controller
     {
         private SuperCarStoreContext db = new SuperCarStoreContext();
 
-        // GET: Cars
+        // GET: Customers
         public ActionResult Index()
         {
-            return View(db.Cars.ToList());
+            var customers = db.Customers.Include(c => c.MembershipType);
+            return View(customers.ToList());
         }
 
-        // GET: Cars/Details/5
+        // GET: Customers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Car car = db.Cars.Find(id);
-            if (car == null)
+            Customer customer = db.Customers.Find(id);
+            if (customer == null)
             {
                 return HttpNotFound();
             }
-            return View(car);
+            return View(customer);
         }
 
-        // GET: Cars/Create
+        // GET: Customers/Create
         public ActionResult Create()
         {
+            ViewBag.MembershipTypeId = new SelectList(db.MerbershipTypes, "Id", "Type");
             return View();
         }
 
-        // POST: Cars/Create
+        // POST: Customers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Make,Model,Year,HP,EngineSpec,FuelType,TopSpeed,ZeroTo60,SalePrice,RentalPrice,ImgUrl")] Car car)
+        public ActionResult Create([Bind(Include = "CustomerId,Name,Email,Phone,DoB,Adress,PostCode,Country,IsSubscribed,MembershipTypeId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
-                db.Cars.Add(car);
+                db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(car);
+            ViewBag.MembershipTypeId = new SelectList(db.MerbershipTypes, "Id", "Type", customer.MembershipTypeId);
+            return View(customer);
         }
 
-        // GET: Cars/Edit/5
+        // GET: Customers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Car car = db.Cars.Find(id);
-            if (car == null)
+            Customer customer = db.Customers.Find(id);
+            if (customer == null)
             {
                 return HttpNotFound();
             }
-            return View(car);
+            ViewBag.MembershipTypeId = new SelectList(db.MerbershipTypes, "Id", "Type", customer.MembershipTypeId);
+            return View(customer);
         }
 
-        // POST: Cars/Edit/5
+        // POST: Customers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Make,Model,Year,HP,EngineSpec,FuelType,TopSpeed,ZeroTo60,SalePrice,RentalPrice,ImgUrl")] Car car)
+        public ActionResult Edit([Bind(Include = "CustomerId,Name,Email,Phone,DoB,Adress,PostCode,Country,IsSubscribed,MembershipTypeId")] Customer customer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(car).State = EntityState.Modified;
+                db.Entry(customer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(car);
+            ViewBag.MembershipTypeId = new SelectList(db.MerbershipTypes, "Id", "Type", customer.MembershipTypeId);
+            return View(customer);
         }
 
-        // GET: Cars/Delete/5
+        // GET: Customers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Car car = db.Cars.Find(id);
-            if (car == null)
+            Customer customer = db.Customers.Find(id);
+            if (customer == null)
             {
                 return HttpNotFound();
             }
-            return View(car);
+            return View(customer);
         }
 
-        // POST: Cars/Delete/5
+        // POST: Customers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Car car = db.Cars.Find(id);
-            db.Cars.Remove(car);
+            Customer customer = db.Customers.Find(id);
+            db.Customers.Remove(customer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

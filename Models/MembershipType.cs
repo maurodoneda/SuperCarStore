@@ -10,6 +10,6 @@ namespace SuperCarStore.Models
         public int Id { get; set; }
         public string Type { get; set; }
         public int Discount { get; set; }
-    
+               
     }
 }

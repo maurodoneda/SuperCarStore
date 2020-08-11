@@ -14,10 +14,8 @@ namespace SuperCarStore.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Manager { get; set; }
-        public Car Car { get; set; }
-        public int CarId { get; set; }
-        public Customer Customer { get; set; }
-        public int CustomerId { get; set; }
+        public virtual ICollection<Car> Cars { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
 
 
     }

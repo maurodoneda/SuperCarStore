@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using SuperCarStore.Models;
 
 namespace SuperCarStore.Data
 {
@@ -19,9 +20,9 @@ namespace SuperCarStore.Data
         {
         }
 
-        public DbSet<SuperCarStore.Models.Car> Cars { get; set; }
-        public DbSet<SuperCarStore.Models.Customer> Customers { get; set; }
-        public DbSet<SuperCarStore.Models.Store> Stores { get; set; }
-        public DbSet<SuperCarStore.Models.MembershipType> MerbershipTypes { get; set; }
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Store> Stores { get; set; }
+        public DbSet<MembershipType> MerbershipTypes { get; set; }
     }
 }

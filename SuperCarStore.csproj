@@ -127,18 +127,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CarsController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\SuperCarStoreContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202008111404505_InitialCreate.cs" />
-    <Compile Include="Migrations\202008111404505_InitialCreate.Designer.cs">
-      <DependentUpon>202008111404505_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008111434437_AddMembershipTypeToCustomers.cs" />
-    <Compile Include="Migrations\202008111434437_AddMembershipTypeToCustomers.Designer.cs">
-      <DependentUpon>202008111434437_AddMembershipTypeToCustomers.cs</DependentUpon>
+    <Compile Include="Migrations\202008111625320_InitialCreate.cs" />
+    <Compile Include="Migrations\202008111625320_InitialCreate.Designer.cs">
+      <DependentUpon>202008111625320_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Car.cs" />
@@ -188,6 +185,11 @@
     <Content Include="Views\Cars\Details.cshtml" />
     <Content Include="Views\Cars\Edit.cshtml" />
     <Content Include="Views\Cars\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -206,11 +208,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008111404505_InitialCreate.resx">
-      <DependentUpon>202008111404505_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008111434437_AddMembershipTypeToCustomers.resx">
-      <DependentUpon>202008111434437_AddMembershipTypeToCustomers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008111625320_InitialCreate.resx">
+      <DependentUpon>202008111625320_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

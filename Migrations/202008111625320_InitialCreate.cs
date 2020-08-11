@@ -12,8 +12,8 @@ namespace SuperCarStore.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Make = c.String(),
-                        Model = c.String(),
+                        Make = c.String(nullable: false),
+                        Model = c.String(nullable: false),
                         Year = c.DateTime(nullable: false),
                         HP = c.Double(nullable: false),
                         EngineSpec = c.String(),
@@ -23,8 +23,11 @@ namespace SuperCarStore.Migrations
                         SalePrice = c.Double(nullable: false),
                         RentalPrice = c.Double(nullable: false),
                         ImgUrl = c.String(),
+                        StoreId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Stores", t => t.StoreId, cascadeDelete: true)
+                .Index(t => t.StoreId);
             
             CreateTable(
                 "dbo.Stores",
@@ -37,30 +40,30 @@ namespace SuperCarStore.Migrations
                         Email = c.String(),
                         Phone = c.String(),
                         Manager = c.String(),
-                        CarId = c.Int(nullable: false),
-                        CustomerId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.StoreId)
-                .ForeignKey("dbo.Cars", t => t.CarId, cascadeDelete: true)
-                .ForeignKey("dbo.Customers", t => t.CustomerId, cascadeDelete: true)
-                .Index(t => t.CarId)
-                .Index(t => t.CustomerId);
+                .PrimaryKey(t => t.StoreId);
             
             CreateTable(
                 "dbo.Customers",
                 c => new
                     {
                         CustomerId = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Email = c.String(),
-                        Phone = c.String(),
+                        Name = c.String(nullable: false),
+                        Email = c.String(nullable: false),
+                        Phone = c.String(nullable: false),
                         DoB = c.DateTime(nullable: false),
                         Adress = c.String(),
                         PostCode = c.String(),
                         Country = c.String(),
                         IsSubscribed = c.Boolean(nullable: false),
+                        MembershipTypeId = c.Int(nullable: false),
+                        Store_StoreId = c.Int(),
                     })
-                .PrimaryKey(t => t.CustomerId);
+                .PrimaryKey(t => t.CustomerId)
+                .ForeignKey("dbo.MembershipTypes", t => t.MembershipTypeId, cascadeDelete: true)
+                .ForeignKey("dbo.Stores", t => t.Store_StoreId)
+                .Index(t => t.MembershipTypeId)
+                .Index(t => t.Store_StoreId);
             
             CreateTable(
                 "dbo.MembershipTypes",
@@ -69,22 +72,19 @@ namespace SuperCarStore.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Type = c.String(),
                         Discount = c.Int(nullable: false),
-                        CustomerId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Customers", t => t.CustomerId, cascadeDelete: true)
-                .Index(t => t.CustomerId);
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Stores", "CustomerId", "dbo.Customers");
-            DropForeignKey("dbo.MembershipTypes", "CustomerId", "dbo.Customers");
-            DropForeignKey("dbo.Stores", "CarId", "dbo.Cars");
-            DropIndex("dbo.MembershipTypes", new[] { "CustomerId" });
-            DropIndex("dbo.Stores", new[] { "CustomerId" });
-            DropIndex("dbo.Stores", new[] { "CarId" });
+            DropForeignKey("dbo.Customers", "Store_StoreId", "dbo.Stores");
+            DropForeignKey("dbo.Customers", "MembershipTypeId", "dbo.MembershipTypes");
+            DropForeignKey("dbo.Cars", "StoreId", "dbo.Stores");
+            DropIndex("dbo.Customers", new[] { "Store_StoreId" });
+            DropIndex("dbo.Customers", new[] { "MembershipTypeId" });
+            DropIndex("dbo.Cars", new[] { "StoreId" });
             DropTable("dbo.MembershipTypes");
             DropTable("dbo.Customers");
             DropTable("dbo.Stores");

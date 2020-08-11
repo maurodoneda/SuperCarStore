@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -8,7 +9,9 @@ namespace SuperCarStore.Models
     public class Car
     {
         public int Id { get; set; }
+        [Required]
         public string Make { get; set; }
+        [Required]
         public string Model { get; set; }
         public DateTime Year { get; set; }
         public double HP { get; set; }
@@ -19,7 +22,9 @@ namespace SuperCarStore.Models
         public double SalePrice { get; set; }
         public double RentalPrice { get; set; }
         public string ImgUrl { get; set; }
-        public ICollection<Store> Store { get; set; }
-       
+        public virtual Store Store { get; set; }
+        public int StoreId { get; set; }
+
+
     }
 }
