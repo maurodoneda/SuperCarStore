@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202008111404505_InitialCreate.Designer.cs">
       <DependentUpon>202008111404505_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008111434437_AddMembershipTypeToCustomers.cs" />
+    <Compile Include="Migrations\202008111434437_AddMembershipTypeToCustomers.Designer.cs">
+      <DependentUpon>202008111434437_AddMembershipTypeToCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -204,6 +208,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008111404505_InitialCreate.resx">
       <DependentUpon>202008111404505_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008111434437_AddMembershipTypeToCustomers.resx">
+      <DependentUpon>202008111434437_AddMembershipTypeToCustomers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

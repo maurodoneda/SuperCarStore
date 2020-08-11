@@ -16,8 +16,8 @@ namespace SuperCarStore.Models
         public string PostCode { get; set; }
         public string Country { get; set; }
         public bool IsSubscribed { get; set; }
-        public ICollection<Store> Store { get; set; }
-        public ICollection<MembershipType> MembershipType { get; set; }
+        public MembershipType MembershipType { get; set; }
+        public int MembershipTypeId { get; set; }  
 
 
     }
