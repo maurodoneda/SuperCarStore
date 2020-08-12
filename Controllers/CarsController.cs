@@ -4,10 +4,12 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using SuperCarStore.Data;
 using SuperCarStore.Models;
+using System.IO;
 
 namespace SuperCarStore.Controllers
 {
@@ -15,9 +17,27 @@ namespace SuperCarStore.Controllers
     {
         private SuperCarStoreContext db = new SuperCarStoreContext();
 
-        // GET: Cars
-        public ActionResult Index()
+        
+
+    // GET: Cars
+    public ActionResult Index()
         {
+            //var path = @"Content\carList\carList.txt";
+
+            //var fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+            //var sr = new StreamReader(fs, Encoding.UTF8);
+            //string cars = sr.ReadToEnd();
+
+            //List<string> carList = new List<string>();
+
+            //foreach (var item in cars)
+            //{
+            //    carList.Add(cars);
+            //}
+
+           
+
+
             return View(db.Cars.ToList());
         }
 

@@ -151,6 +151,14 @@
     <Compile Include="Migrations\202008111658124_PopulateStoresAndMembershipTypes.Designer.cs">
       <DependentUpon>202008111658124_PopulateStoresAndMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008121638223_PopulateCarsTable2.cs" />
+    <Compile Include="Migrations\202008121638223_PopulateCarsTable2.Designer.cs">
+      <DependentUpon>202008121638223_PopulateCarsTable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008121645110_ChangeNullabeTypes.cs" />
+    <Compile Include="Migrations\202008121645110_ChangeNullabeTypes.Designer.cs">
+      <DependentUpon>202008121645110_ChangeNullabeTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -165,6 +173,55 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\carList\carList.txt" />
+    <Content Include="Content\imgs\cars\1504813_911_speedster_concept_2018_porsche_ag-1024x577.jpg" />
+    <Content Include="Content\imgs\cars\17-Porsche-918-Spyder-1024x683.jpg" />
+    <Content Include="Content\imgs\cars\190001-car-f8-tributo-1024x770.jpg" />
+    <Content Include="Content\imgs\cars\2010_Bugatti_164VeyronSuperSport14-1024x682.jpg" />
+    <Content Include="Content\imgs\cars\2010_Ferrari_599GTO-0-1024-1024x638.jpg" />
+    <Content Include="Content\imgs\cars\2010_Lamborghini_MurcilagoLP6704SuperVeloce1-1-1024x768.jpg" />
+    <Content Include="Content\imgs\cars\2010_McLaren_MP412C3-1024x768.jpg" />
+    <Content Include="Content\imgs\cars\2011_Lamborghini_GallardoLP5704SuperTrofeoStradale4-1024x731.jpg" />
+    <Content Include="Content\imgs\cars\2012_Lamborghini_AventadorJ6-1024x683.jpg" />
+    <Content Include="Content\imgs\cars\2012_Lexus_LFANrburgringPackage1-1024x617.jpg" />
+    <Content Include="Content\imgs\cars\2013-Ferrari-F12-berlinetta-1024x640.jpg" />
+    <Content Include="Content\imgs\cars\2013_AstonMartin_V12VantageS-7-1024-1024x679.jpg" />
+    <Content Include="Content\imgs\cars\2013_Pagani_ZondaRevolucion-0-1024-1024x682.jpg" />
+    <Content Include="Content\imgs\cars\2014_Bentley_ContinentalGT3R-0-15361-1024x683.jpg" />
+    <Content Include="Content\imgs\cars\2014_Ferrari_458Speciale-1-1024-1024x757.jpg" />
+    <Content Include="Content\imgs\cars\2015_Audi_R8V10plus-5-1024-1024x683.jpg" />
+    <Content Include="Content\imgs\cars\2015_Ferrari_F12tdf-1-1024-1024x630.jpg" />
+    <Content Include="Content\imgs\cars\2015_McLaren_675LTCoup-4-1536-1024x724.jpg" />
+    <Content Include="Content\imgs\cars\2017_lamborghini_centenario_4k-HD-1-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\2018-Porsche-911-GT2-RS-V1-1080-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\2018_mclaren_720s_memphis_red_5k-HD-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\2019-Aston-Martin-Vantage-V1-1080-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\2019-Lamborghini-Aventador-SVJ-V1-1080-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\2020-Mercedes-AMG-GT-R-PRO-V1-1080-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\26-McLaren-P1-1024x683.jpg" />
+    <Content Include="Content\imgs\cars\861054-1024x683.jpg" />
+    <Content Include="Content\imgs\cars\asap-new-york-sorry-16_1600x0w-1024x683.jpg" />
+    <Content Include="Content\imgs\cars\Aston-Martin-DBS-Superleggera--1024x679.jpg" />
+    <Content Include="Content\imgs\cars\bugatti-chiron-20-1024x684.jpg" />
+    <Content Include="Content\imgs\cars\Ferrari-488-Pista-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\Ferrari-812-Superfast-4k-Wallpaper-1024x724.jpeg" />
+    <Content Include="Content\imgs\cars\Ferrari-LaFerrari-Ultimate-Guide-57-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\Ferrari-Monza_SP1-2019-1600-09-e1537358181773-1024x504.jpg" />
+    <Content Include="Content\imgs\cars\ferrari812.jpg" />
+    <Content Include="Content\imgs\cars\ford-gt-9-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\gallery_veneno01_1920x1080-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\Julia_LaPalme_LagunaSeca_2015_MGL3058-1024x683.jpg" />
+    <Content Include="Content\imgs\cars\Lamborghini-huracan-performante.jpg" />
+    <Content Include="Content\imgs\cars\Lamborghini-Huracán-Evo-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\Lamborghini-Sesto-Elemento-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\McLaren-600LT-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\mclaren-senna-1024x768.jpg" />
+    <Content Include="Content\imgs\cars\Pagani-Huayra-BC-1024x640.jpg" />
+    <Content Include="Content\imgs\cars\Porsche-911-GT3-RS-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\porsche-zoom-7-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\Screenshot-2019-11-16-11.43.50-1024x578.png" />
+    <Content Include="Content\imgs\cars\wp2208077-1024x576.jpg" />
+    <Content Include="Content\imgs\cars\wp2268985-1024x576.jpg" />
     <Content Include="Content\imgs\lotus.jpg" />
     <Content Include="Content\imgs\mercedesBcg.jpg" />
     <Content Include="Content\imgs\mercedesBcg2.jpg" />
@@ -211,6 +268,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\myScript.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -338,6 +396,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008111658124_PopulateStoresAndMembershipTypes.resx">
       <DependentUpon>202008111658124_PopulateStoresAndMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008121638223_PopulateCarsTable2.resx">
+      <DependentUpon>202008121638223_PopulateCarsTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008121645110_ChangeNullabeTypes.resx">
+      <DependentUpon>202008121645110_ChangeNullabeTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
