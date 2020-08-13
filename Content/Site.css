@@ -27,6 +27,33 @@ textarea {
  */
 
 
+
+
+@font-face {
+    font-family: "Ferro Rosso";
+    src: url(/fonts/FerroRosso-0v5X.ttf) format("truetype");
+}
+
+
+@font-face {
+    font-family: "Thunderbolt";
+    src: url(/fonts/ThunderboldDemo-qZ7q2.otf) format('opentype');
+}
+
+
+@font-face {
+    font-family: 'Hemi';
+    src: url('../fonts/hemi head bd it.ttf') format('truetype');
+}
+
+
+
+:root {
+    --txt-decoration: #d00000;
+    --clr-background: #080C0F;
+    --txt-main: #ffffff;
+}
+
 body {
     background-image: url("/Content/imgs/super1.jpg");
     min-height: 100vh;
@@ -36,34 +63,10 @@ body {
     background-size: cover;
     color: #ECE5F0;
     display: block;
-    font-family: Thunderbolt;
+    font-family: 'Hemi', arial;
     filter: grayscale(20%);
     overflow-y: scroll;
     background-attachment: fixed;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Rowdies:wght@400;700&family=Russo+One&display=swap');
-
-@font-face {
-    font-family: "Ferro Rosso";
-    src: url(/fonts/FerroRosso-0v5X.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "American";
-    src: url(/fonts/AmericanCaptain-MdEY.otf) format("truetype");
-}
-
-@font-face {
-    font-family: "Thunderbolt";
-    src: url(/fonts/ThunderboldDemo-qZ7q2.otf) format("truetype");
-}
-
-
-:root {
-    --txt-decoration: #d00000;
-    --clr-background: #080C0F;
-    --txt-main: #ffffff;
 }
 
 
@@ -88,7 +91,7 @@ nav .navbar-nav .nav-link{
     display: none;
 }
 
-@media(max-width: 576px){
+@media(max-width: 768px){
     .brand {
         color: var(--txt-main);
         display: block;
@@ -100,6 +103,13 @@ nav .navbar-nav .nav-link{
             color: var(--txt-decoration);
         }
 
+    .overlayText {
+        display:none;
+    }
+
+  
+
+
 }
 
 
@@ -110,7 +120,7 @@ nav .navbar-nav .nav-link{
 
 .welcomeText {
     position: relative;
-    top:40px;
+    top: 5vh;
     font-weight: 500;
     font-size: 55px;
     color: dimgrey;
@@ -118,6 +128,12 @@ nav .navbar-nav .nav-link{
     transform: scale(1, 1.1);
 }
 
+@media(max-width: 768px){
+      .welcomeText{
+        position:relative;
+        top:15vh;
+    }
+}
 
     .welcomeText span {
         font-weight: 500;
@@ -134,7 +150,7 @@ nav .navbar-nav .nav-link{
     left: 5px;
     font-size: 70px;
     color: var(--txt-decoration);
-    opacity: 0.10;
+    opacity: 0.15;
     font-weight: bolder;
     transform: scale(1, 1.3);
 }
@@ -177,8 +193,10 @@ div .cards {
     height: 50px;
 }
 
-footer{
+footer {
     color: var(--txt-main);
+    background: rgba(91,8,15, 0.4);
+    padding-top: 10px;
 }
 
 /* ------------- 2 -  Other Pages  ----------------------- */
@@ -188,20 +206,8 @@ footer{
     color: var(--txt-main);
 }
 
-/*.imgCover{
-    background-image: url("/Content/imgs/super1.jpg");
-    height: 100vh;
-    width: auto;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: #ECE5F0;
-    font-family: Thunderbolt;
-
-}*/
 
 .table, .card {
-    font-family: Verdana;
     font-size: 1rem;
     font-style: italic;
     background: none;
@@ -214,19 +220,84 @@ footer{
     padding:20px;
 }*/
 
-.cardDiv {
+.cardContainer {
+    margin-bottom: 10px;
+    padding: 0;
+    box-shadow: 20px 20px 20px -30px rgba(175,0,0,1), -20px 20px 20px -30px rgba(175,0,0,1);
     border-radius: 10px;
-    background: rgba(255,255,255, 0.5);
+}
+
+    .cardContainer:hover {
+        transform: scale(1.02);
+        transition: ease-in 0.2s;
+    }
+
+
+.cardBody {
+    border-radius: 10px;
+    background: rgba(255,255,255, 0.4);
+ 
 }
 
 .cardImg {
-
-    border-bottom-left-radius:10px;
-    border-top-left-radius:10px;
-    height:250px;
-
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 480px;
+   
 }
+
+
 
 .cardDetails {
     padding-top: 20px;
+    margin: 0;
+    font-size: 14px;
+    background: rgba(255,255,255,0.4);
+    vertical-align:middle;
+}
+
+.card-block {
+    display: grid;
+    grid-template-areas: "cardDetails description buttons";
+    grid-template-columns: 20% 60% 20%;
+    /*max-height: 200px;*/
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    overflow-wrap: break-word;
+
+}
+
+.carMake {
+    font-family: "Ferro Rosso";
+    color: black;
+    font-size: 30px;
+    background: rgba(255,255,255,0.4);
+    margin-bottom:0;
+    margin-left:0;
+}
+.carModel {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--txt-decoration);
+    background: rgba(255,255,255,0.4);
+    padding: 0 0 10px 0;
+    margin-top:0;
+}
+
+dt {
+    color: black;
+}
+dd{
+    color: var(--txt-decoration);
+}
+
+.actionBtns a{
+    position:relative;
+    top:20%;
+    width: 85px;
 }
