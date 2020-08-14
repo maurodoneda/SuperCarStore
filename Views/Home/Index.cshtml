@@ -5,40 +5,42 @@
 
 
 
-<div class="container-fluid text-center welcomeText">
-    <p class="overlayText">Super Car Experience</p>
-    <p>Super Car <span> Experience</span></p>
-    <div class="underLine"></div>
-</div>
+    <div class="d-flex flex-column landingPage">
+        <div class="container-fluid text-center welcomeText flex-grow-1">
+            <p class="overlayText">Super Car Experience</p>
+            <p>Super Car <span> Experience</span></p>
+            <div class="underLine"></div>
+        </div>
 
 
 
 
-<form class="container form-inline booking pr-0" name="booking">
+        <div class="container bookingContainer">
+            <form class="form-inline booking pr-0" name="booking">
+                <div class="formSelect">
+                    <label><span>Store:</span></label>
+                    <select name="store">
+                        <option value="1">London</option>
+                        <option value="2">Silverston</option>
+                        <option value="3">Milan</option>
+                        <option value="4">Las Vegas</option>
+                    </select>
+                </div>
 
-    <div class="formSelect">
-        <label><span>Store:</span></label>
-        <select name="store">
-            <option value="1">London</option>
-            <option value="2">Silverston</option>
-            <option value="3">Milan</option>
-            <option value="4">Las Vegas</option>
-        </select>
+                <div class="mr-2 pt-2 pickUpDate">
+                    <label for="checkin"><span>Pick up:</span></label>
+                    <input type="datetime-local" class="pt-0" value="" id="checkin">
+                </div>
+
+                <div class="mr-2 pt-2 returnDate">
+                    <label for="return"><span>Return:</span></label>
+                    <input type="datetime-local" class="dateselect" id="return">
+                </div>
+
+                <button class="btn btn-secondary checkBtn" id="search">
+                    Check
+                </button>
+
+            </form>
+        </div>
     </div>
-
-    <div class="mr-2 pt-2">
-        <label for="checkin"><span>Pick up:</span></label>
-        <input type="datetime-local" value="" id="checkin">
-    </div>
-
-    <div class="mr-2 pt-2">
-        <label for="return"><span>Return:</span></label>
-        <input type="datetime-local" class="dateselect" id="return">
-    </div>
-
-        <button class="btn btn-secondary checkBtn" id="search">
-            Check
-        </button>
-
-</form>
-
