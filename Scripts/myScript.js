@@ -1,5 +1,5 @@
 ﻿
-document.addEventListener("DOMContentenLoaded", EquilizeTexAndImgSize());
+document.addEventListener("DOMContentLoaded", EquilizeTexAndImgSize());
 
 function EquilizeTexAndImgSize() {
 
@@ -22,7 +22,7 @@ function EquilizeTexAndImgSize() {
 
 
 
-$('.dateselect').datepicker({
-    format: 'mm/dd/yyyy',
-    // startDate: '-3d'
-});
+//$('.dateselect').datepicker({
+//    format: 'mm/dd/yyyy',
+//    // startDate: '-3d'
+//});

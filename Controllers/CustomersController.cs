@@ -40,7 +40,7 @@ namespace SuperCarStore.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
-            ViewBag.MembershipTypeId = new SelectList(db.MerbershipTypes, "Id", "Type");
+            ViewBag.MembershipTypeId = new SelectList(db.MembershipTypes, "Id", "Type");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace SuperCarStore.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MembershipTypeId = new SelectList(db.MerbershipTypes, "Id", "Type", customer.MembershipTypeId);
+            ViewBag.MembershipTypeId = new SelectList(db.MembershipTypes, "Id", "Type", customer.MembershipTypeId);
             return View(customer);
         }
 
@@ -74,7 +74,7 @@ namespace SuperCarStore.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MembershipTypeId = new SelectList(db.MerbershipTypes, "Id", "Type", customer.MembershipTypeId);
+            ViewBag.MembershipTypeId = new SelectList(db.MembershipTypes, "Id", "Type", customer.MembershipTypeId);
             return View(customer);
         }
 
@@ -91,7 +91,7 @@ namespace SuperCarStore.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MembershipTypeId = new SelectList(db.MerbershipTypes, "Id", "Type", customer.MembershipTypeId);
+            ViewBag.MembershipTypeId = new SelectList(db.MembershipTypes, "Id", "Type", customer.MembershipTypeId);
             return View(customer);
         }
 

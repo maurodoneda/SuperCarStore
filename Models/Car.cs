@@ -28,6 +28,8 @@ namespace SuperCarStore.Models
         public string ImgUrl { get; set; }
         public virtual Store Store { get; set; }
         public int StoreId { get; set; }
+        public int NumberOfLikes { get; set; }
+        public int NumberOfDislikes { get; set; }
 
 
     }

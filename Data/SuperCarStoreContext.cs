@@ -23,6 +23,6 @@ namespace SuperCarStore.Data
         public DbSet<Car> Cars { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Store> Stores { get; set; }
-        public DbSet<MembershipType> MerbershipTypes { get; set; }
+        public DbSet<MembershipType> MembershipTypes { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using SuperCarStore.Data;
+using SuperCarStore.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,17 @@ namespace SuperCarStore.Controllers
         private SuperCarStoreContext db = new SuperCarStoreContext();
         public ActionResult Index()
         {
-            return View();
+
+            var stores = new StoresViewModel
+            {
+                SelectedStoreId = 0,
+                Stores = db.Stores.ToList(),
+                Cars = db.Cars.ToList()
+            };
+
+
+
+            return View(stores);
         }
 
         public ActionResult About()
@@ -32,8 +43,18 @@ namespace SuperCarStore.Controllers
         public ActionResult Stores()
         {
             ViewBag.Message = "Check out our Stores around the world";
+
+            var stores = db.Stores.ToList();
                         
-            return View(db.Stores.ToList());
+            return View(stores);
+        }
+
+
+        public ActionResult BookCar()
+        {
+          
+
+                return View();
         }
     }
 }

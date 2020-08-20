@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using SuperCarStore.Data;
 using SuperCarStore.Models;
 using System.IO;
+using SuperCarStore.ViewModels;
 
 namespace SuperCarStore.Controllers
 {
@@ -20,26 +21,41 @@ namespace SuperCarStore.Controllers
         
 
     // GET: Cars
-    public ActionResult Index()
+    public ActionResult Index(int? id)
         {
-            //var path = @"Content\carList\carList.txt";
-
-            //var fs = new FileStream(path, FileMode.Open, FileAccess.Read);
-            //var sr = new StreamReader(fs, Encoding.UTF8);
-            //string cars = sr.ReadToEnd();
-
-            //List<string> carList = new List<string>();
-
-            //foreach (var item in cars)
-            //{
-            //    carList.Add(cars);
-            //}
-
-           
 
 
-            return View(db.Cars.ToList());
+            if (id == null)
+            {
+                var allCars = db.Cars.ToList();
+                return View(allCars);
+            }
+
+            var cars = db.Cars.Where(c => c.StoreId == id);
+
+            return View(cars);
+            
+            
+            //Select(x => x.StoreId == storeId);
+
+            /*  */  /*Where(x => x.StoreId == storeId)*/
+
+
         }
+
+        // GET: Cars/CarsInStore/1
+        public ActionResult CarsInStore(StoresViewModel storeId)
+        {
+
+       
+            int id = storeId.SelectedStoreId;
+
+            //RedirectToAction("Index", id);
+
+            return Index(id);
+        }
+
+
 
         // GET: Cars/Details/5
         public ActionResult Details(int? id)
