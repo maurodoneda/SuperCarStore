@@ -506,12 +506,12 @@ input[type="date"]:after {
 
     .actionBtns a {
         position: relative;
-        top: 20%;
+        top: 12%;
         width: 85px;
     }
 
 .bottomInfo {
-    background: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.6);
     color: black;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -537,10 +537,6 @@ input[type="date"]:after {
             margin-bottom: 2px;
         }
 
-        .description {
-            height: 150px !important;
-        }
-
         .cardBody, .card-block {
             display: flex;
             flex-flow: column;
@@ -552,6 +548,23 @@ input[type="date"]:after {
             flex-wrap: wrap;
             justify-content: space-evenly;
         }
+
+        .bottomInfo {
+            background: rgba(255,255,255,0.6);
+            color: black;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            font-size: 14px;
+          
+        }
+
+            .bottomInfo .carInfo {
+                color: var(--txt-decoration);
+                font-size: 14px;
+                position:relative;
+                left:-15px;
+            }
+
     }
 
 

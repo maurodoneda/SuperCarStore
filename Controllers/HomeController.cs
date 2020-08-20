@@ -14,16 +14,24 @@ namespace SuperCarStore.Controllers
         public ActionResult Index()
         {
 
-            var stores = new StoresViewModel
-            {
-                SelectedStoreId = 0,
-                Stores = db.Stores.ToList(),
-                Cars = db.Cars.ToList()
-            };
+            //var stores = new StoresViewModel
+            //{
+            //    SelectedStoreId = 0,
+            //    Stores = db.Stores.ToList(),
+            //    Cars = db.Cars.ToList()
+            //};
+
+            List<string> storeList = new List<string>();
+
+            var storeQuery = db.Stores.Select(x => x.City);
+            storeList.AddRange(storeQuery.Distinct());
+            ViewBag.Store = new SelectList(storeList);
 
 
+            var allCars = db.Cars.ToList();
 
-            return View(stores);
+
+            return View(allCars);
         }
 
         public ActionResult About()

@@ -209,7 +209,6 @@
     <Content Include="Content\imgs\cars\2020-Mercedes-AMG-GT-R-PRO-V1-1080-1024x576.jpg" />
     <Content Include="Content\imgs\cars\26-McLaren-P1-1024x683.jpg" />
     <Content Include="Content\imgs\cars\861054-1024x683.jpg" />
-    <Content Include="Content\imgs\cars\asap-new-york-sorry-16_1600x0w-1024x683.jpg" />
     <Content Include="Content\imgs\cars\Aston-Martin-DBS-Superleggera--1024x679.jpg" />
     <Content Include="Content\imgs\cars\bugatti-chiron-20-1024x684.jpg" />
     <Content Include="Content\imgs\cars\Ferrari-488-Pista-1024x576.jpg" />
@@ -219,7 +218,6 @@
     <Content Include="Content\imgs\cars\ferrari812.jpg" />
     <Content Include="Content\imgs\cars\ford-gt-9-1024x576.jpg" />
     <Content Include="Content\imgs\cars\gallery_veneno01_1920x1080-1024x576.jpg" />
-    <Content Include="Content\imgs\cars\Julia_LaPalme_LagunaSeca_2015_MGL3058-1024x683.jpg" />
     <Content Include="Content\imgs\cars\koenigsegg-one1.jpg" />
     <Content Include="Content\imgs\cars\Lamborghini-huracan-performante.jpg" />
     <Content Include="Content\imgs\cars\Lamborghini-Huracán-Evo-1024x576.jpg" />
@@ -230,9 +228,7 @@
     <Content Include="Content\imgs\cars\Pagani-Huayra-BC-1024x640.jpg" />
     <Content Include="Content\imgs\cars\Porsche-911-GT3-RS-1024x576.jpg" />
     <Content Include="Content\imgs\cars\porsche-zoom-7-1024x576.jpg" />
-    <Content Include="Content\imgs\cars\Screenshot-2019-11-16-11.43.50-1024x578.png" />
     <Content Include="Content\imgs\cars\wp2208077-1024x576.jpg" />
-    <Content Include="Content\imgs\cars\wp2268985-1024x576.jpg" />
     <Content Include="Content\imgs\lotus.jpg" />
     <Content Include="Content\imgs\mercedesBcg.jpg" />
     <Content Include="Content\imgs\mercedesBcg2.jpg" />
@@ -269,6 +265,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="fonts\hemi head bd it.ttf" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
