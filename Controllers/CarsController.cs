@@ -21,19 +21,62 @@ namespace SuperCarStore.Controllers
         
 
     // GET: Cars
-    public ActionResult Index(int? id)
+    public ActionResult Index(int? id, string searchString, string store)
         {
 
+            List<string> storeList = new List<string>();
 
-            if (id == null)
+            var storeQuery = db.Stores.Select(x => x.City);
+                             //from s in db.Stores 
+                             //where (id == s.StoreId)
+                             //select s;
+            
+            storeList.AddRange(storeQuery.Distinct());
+            ViewBag.Store = new SelectList(storeList);
+
+
+            //Query cars from db based on the input received
+
+            var allCars = db.Cars.ToList();
+            var carsInStore = db.Cars.Where(c => c.StoreId == id);
+
+            
+            //Controw flow for what should be displayed on the view
+
+            if (!string.IsNullOrEmpty(store) && string.IsNullOrEmpty(searchString))
             {
-                var allCars = db.Cars.ToList();
+                allCars = allCars.Where(x => x.Store.City.Equals(store)).ToList();
                 return View(allCars);
             }
 
-            var cars = db.Cars.Where(c => c.StoreId == id);
+            else if(!string.IsNullOrEmpty(store) && !string.IsNullOrEmpty(searchString))
+            {
+                allCars = allCars.Where(x => x.Store.City.Equals(store)).ToList();
+                var carsQuery = allCars.Where(x => x.Make.ToLower().Contains(searchString.ToLower())).ToList();
+                return View(carsQuery);
+            }
 
-            return View(cars);
+            if (!string.IsNullOrEmpty(searchString) && id == null)
+            {
+                allCars = allCars.Where(x => x.Make.ToLower().Contains(searchString.ToLower())).ToList();
+                return View(allCars);
+            } 
+            else if(!string.IsNullOrEmpty(searchString) && id != null)
+            {
+
+                carsInStore = carsInStore.Where(x => x.Make.ToLower().Contains(searchString.ToLower()));
+                return View(carsInStore);
+            }
+
+            if (id == null && searchString == null)
+            {
+                return View(allCars);
+            }
+
+
+
+
+            return View(carsInStore);
             
             
             //Select(x => x.StoreId == storeId);
@@ -44,15 +87,15 @@ namespace SuperCarStore.Controllers
         }
 
         // GET: Cars/CarsInStore/1
-        public ActionResult CarsInStore(StoresViewModel storeId)
+        public ActionResult CarsInStore(StoresViewModel store)
         {
 
        
-            int id = storeId.SelectedStoreId;
+            int storeId = store.SelectedStoreId;
 
-            //RedirectToAction("Index", id);
+            return RedirectToAction("Index", new {id = storeId} );
 
-            return Index(id);
+            //return Index(id);
         }
 
 

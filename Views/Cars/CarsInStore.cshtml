@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<SuperCarStore.Models.Car>
 
 @{
-    ViewBag.Title = "Cars in store";
+    ViewBag.Title = "Index";
 }
 
 <div class="text-center pages container">
 
-    <h2>Index</h2>
+    <h2>Here is our Supercars available for you!</h2>
 
     <p>
         @Html.ActionLink("Create New", "Create")
@@ -83,3 +83,4 @@
 
 </div>
 
+@Scripts.Render("~/Scripts/myScript.js")

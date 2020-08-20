@@ -2,73 +2,102 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div class="container cardContainer">
-                <div class="card">
-                    <div class="row no-gutters cardBody" id="carBody" >
-                        <div class="col-auto" id="carImg">
-                            <img src="~/Content/imgs/cars/@Html.DisplayFor(model => model.ImgUrl)" class="cardImg" />
-                        </div>
-                        <div class="col">
-                            <div class="card-block">
-                                <dl class="dl-horizontal cardDetails">
+    <div class="text-center pages container">
+            <h2 class="Title">Details</h2>
+        <div class="container cardContainer detailsCard">
 
-                                    <dt>
-                                        Year
-                                    </dt>
+            <div class="card">
+                <div class="row no-gutters cardBody" id="carBody">
+                    <div class="col-auto" id="carImg">
+                        <img src="~/Content/imgs/cars/@Html.DisplayFor(model => model.ImgUrl)" class="cardImg" />
+                    </div>
+                    <div class="col">
+                        <div class="card-block">
+                            
+                            <div class="descContainer">
 
-                                    <dd>
-                                        @Html.DisplayFor(model => model.Year)
-                                    </dd>
+                                <p class="carMake">@Html.DisplayFor(model => model.Make)</p>
+                                <p class="carModel">@Html.DisplayFor(model => model.Model)</p>
+                                <div class="container description overflow-auto" id="carDescription">
+                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 
-                                    <dt>
-                                        Engine
-                                    </dt>
-
-                                    <dd>
-                                        @Html.DisplayFor(model => model.EngineSpec)
-                                    </dd>
-
-                                    <dt>
-                                        Horse Power
-                                    </dt>
-
-                                    <dd>
-                                        @Html.DisplayFor(model => model.HP)
-                                    </dd>
-                                    <dt>
-                                        Max Speed(mph)
-                                    </dt>
-
-                                    <dd>
-                                        @Html.DisplayFor(model => model.TopSpeed)
-                                    </dd>
-
-                                </dl>
-
-                                <div class="descContainer">
-
-                                    <p class="carMake">@Html.DisplayFor(model => model.Make)</p>
-                                    <p class="carModel">@Html.DisplayFor(model => model.Model)</p>
-                                    <div class="container description overflow-auto" id="carDescription">
-                                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-                                    </div>
-                                </div>
-                                <div class="actionBtns">
-                                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary mt-2" })
-                                    @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-primary mt-2" })
+                                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
                                 </div>
                             </div>
+
+                            <dl class="dl-horizontal cardDetails">
+
+
+
+                                <dt>
+                                    Year
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Year)
+                                </dd>
+
+                                <dt>
+                                    Engine
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.EngineSpec)
+                                </dd>
+
+                                <dt>
+                                    Horse Power(HP)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.HP)
+                                </dd>
+                                <dt>
+                                    Max Speed(mph)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.TopSpeed)
+                                </dd>
+                                <dt>
+                                    Acceleration(seconds)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.ZeroTo60)
+                                </dd>
+                                <dt>
+                                    Experience Price($/Hour)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.RentalPrice)
+                                </dd>
+                                <dt>
+                                    Location
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Store.City)
+                                </dd>
+                             
+
+                            </dl>
+
+                       
                         </div>
                     </div>
                 </div>
             </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            <div class="actionBtns">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary mt-2" })
+                @Html.ActionLink("Back", "Index","", new { @class = "btn btn-primary mt-2" })
+            </div>
+
+        </div>
+
+    </div>

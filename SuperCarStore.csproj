@@ -159,6 +159,14 @@
     <Compile Include="Migrations\202008121645110_ChangeNullabeTypes.Designer.cs">
       <DependentUpon>202008121645110_ChangeNullabeTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008201543540_AddProprietysToCar.cs" />
+    <Compile Include="Migrations\202008201543540_AddProprietysToCar.Designer.cs">
+      <DependentUpon>202008201543540_AddProprietysToCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008201546510_AddProprietysToCar1.cs" />
+    <Compile Include="Migrations\202008201546510_AddProprietysToCar1.Designer.cs">
+      <DependentUpon>202008201546510_AddProprietysToCar1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -212,11 +220,13 @@
     <Content Include="Content\imgs\cars\ford-gt-9-1024x576.jpg" />
     <Content Include="Content\imgs\cars\gallery_veneno01_1920x1080-1024x576.jpg" />
     <Content Include="Content\imgs\cars\Julia_LaPalme_LagunaSeca_2015_MGL3058-1024x683.jpg" />
+    <Content Include="Content\imgs\cars\koenigsegg-one1.jpg" />
     <Content Include="Content\imgs\cars\Lamborghini-huracan-performante.jpg" />
     <Content Include="Content\imgs\cars\Lamborghini-Huracán-Evo-1024x576.jpg" />
     <Content Include="Content\imgs\cars\Lamborghini-Sesto-Elemento-1024x576.jpg" />
     <Content Include="Content\imgs\cars\McLaren-600LT-1024x576.jpg" />
     <Content Include="Content\imgs\cars\mclaren-senna-1024x768.jpg" />
+    <Content Include="Content\imgs\cars\mercedes-sls-gt-amg-blackseries.png" />
     <Content Include="Content\imgs\cars\Pagani-Huayra-BC-1024x640.jpg" />
     <Content Include="Content\imgs\cars\Porsche-911-GT3-RS-1024x576.jpg" />
     <Content Include="Content\imgs\cars\porsche-zoom-7-1024x576.jpg" />
@@ -405,6 +415,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008121645110_ChangeNullabeTypes.resx">
       <DependentUpon>202008121645110_ChangeNullabeTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008201543540_AddProprietysToCar.resx">
+      <DependentUpon>202008201543540_AddProprietysToCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008201546510_AddProprietysToCar1.resx">
+      <DependentUpon>202008201546510_AddProprietysToCar1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

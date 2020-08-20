@@ -2,22 +2,37 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
     <div class="text-center pages container">
 
-        <h2>Index</h2>
+
+
+
+        @using (Html.BeginForm())
+        {
+            <p>
+                @Html.TextBox("searchString","", new {placeholder="Search by Make"})
+                 @Html.DropDownList("Store", "Search By Store")
+                <input type="submit" value="Search" />
+            </p>
+
+        }
+
 
         <p>
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Add new car to stock", "Create")
         </p>
 
+        <h2>Here is our Supercars available for you!</h2>
+        <br />
 
         @foreach (var item in Model)
         {
-            <div class="container cardContainer">
+            <div class="container cardContainer mb-0">
                 <div class="card">
-                    <div class="row no-gutters cardBody" id="carBody" >
+                    <div class="row no-gutters cardBody" id="carBody">
                         <div class="col-auto" id="carImg">
                             <img src="~/Content/imgs/cars/@Html.DisplayFor(modelItem => item.ImgUrl)" class="cardImg" />
                         </div>
@@ -42,7 +57,7 @@
                                     </dd>
 
                                     <dt>
-                                        Horse Power
+                                        Horse Power(HP)
                                     </dt>
 
                                     <dd>
@@ -55,6 +70,8 @@
                                     <dd>
                                         @Html.DisplayFor(modelItem => item.TopSpeed)
                                     </dd>
+
+
 
                                 </dl>
 
@@ -69,18 +86,50 @@
                                     </div>
                                 </div>
                                 <div class="actionBtns">
+                                    @*<a class="text-info mr-1 likeBtn">
+                                        <i class="fas fa-thumbs-up fa-2x"></i>
+                                    </a>*@
                                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary mt-2" })
-                                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary mt-2" })
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary mt-2" })
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info mt-2" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger mt-2" })
+                                    @Html.ActionLink("Book", "Details", new { id = item.Id }, new { @class = "btn btn-primary mt-2" })
+
+                                    @*<a class="text-danger mr-1">
+                                        <i class="fas fa-thumbs-down fa-2x"></i>
+                                    </a>*@
                                 </div>
+
+
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="d-flex bottomInfo justify-content-center pt-3 mb-3 mt-0">
 
+                <p class="mr-2">
+                    Experience Price($/Hour):
+                </p>
+
+                <p class="mr-2 carInfo">
+                    @Html.DisplayFor(modelItem => item.RentalPrice)
+                </p>
+                |
+                <br />
+                <p class="ml-2 mr-2">
+                    Store Location:
+                </p>
+
+                <p class="carInfo">
+                    @Html.DisplayFor(modelItem => item.Store.City)
+                </p>
+
+            </div>
         }
 
     </div>
 
-  
+@Scripts.Render("~/Scripts/myScript.js")
+
+
