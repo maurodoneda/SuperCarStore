@@ -21,7 +21,7 @@ namespace SuperCarStore.Controllers
         
 
     // GET: Cars
-    public ActionResult Index(int? id, string searchString, string store)
+    public ActionResult Index(string car, string searchString, string store)
         {
 
             List<string> storeList = new List<string>();
@@ -38,9 +38,9 @@ namespace SuperCarStore.Controllers
             //Query cars from db based on the input received
 
             var allCars = db.Cars.ToList();
-            var carsInStore = db.Cars.Where(c => c.StoreId == id);
+            var carsInStore = db.Cars.Where(c => c.Make == car);
 
-            
+
             //Controw flow for what should be displayed on the view
 
             if (!string.IsNullOrEmpty(store) && string.IsNullOrEmpty(searchString))
@@ -56,19 +56,19 @@ namespace SuperCarStore.Controllers
                 return View(carsQuery);
             }
 
-            if (!string.IsNullOrEmpty(searchString) && id == null)
+            if (!string.IsNullOrEmpty(searchString) && car == null)
             {
                 allCars = allCars.Where(x => x.Make.ToLower().Contains(searchString.ToLower())).ToList();
                 return View(allCars);
             } 
-            else if(!string.IsNullOrEmpty(searchString) && id != null)
+            else if(!string.IsNullOrEmpty(searchString) && car != null)
             {
 
                 carsInStore = carsInStore.Where(x => x.Make.ToLower().Contains(searchString.ToLower()));
                 return View(carsInStore);
             }
 
-            if (id == null && searchString == null)
+            if (car == null && searchString == null)
             {
                 return View(allCars);
             }
@@ -87,13 +87,20 @@ namespace SuperCarStore.Controllers
         }
 
         // GET: Cars/CarsInStore/1
-        public ActionResult CarsInStore(StoresViewModel store)
+        public ActionResult CarsInStock(string car)
         {
 
-       
-            int storeId = store.SelectedStoreId;
+            //var allCars = db.Cars.ToList();
 
-            return RedirectToAction("Index", new {id = storeId} );
+            //if (!string.IsNullOrEmpty(car))
+            //{
+            //    allCars = allCars.Where(x => x.Make.ToLower().Contains(car.ToLower())).ToList();
+            //    return View(allCars);
+            //}
+
+            ViewBag.Car = car;
+
+            return RedirectToAction("Index", new {searchString = car} );
 
             //return Index(id);
         }

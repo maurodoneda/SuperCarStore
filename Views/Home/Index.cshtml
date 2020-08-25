@@ -6,41 +6,115 @@
 @model IEnumerable<SuperCarStore.Models.Car>
 
 
-<div class="d-flex flex-column landingPage">
-    <div class="container-fluid text-center welcomeText flex-grow-1">
-        <p class="overlayText">Super Car Experience</p>
-        <p>Super Car <span> Experience</span></p>
-        <div class="underLine"></div>
-    </div>
+    <div class="d-flex flex-column landingPage">
+        <div class="container-fluid text-center welcomeText flex-grow-1">
+            <p class="overlayText">Super Car Experience</p>
+            <p>Super Car <span> Experience</span></p>
+            <div class="underLine"></div>
+        </div>
 
+        <div class="container iconsContainer d-flex flex-wrap">
+            <div class="card carIcon container p-0 m-2" style="width: 13rem;">
+                <a class="js-search" data-car="Ferrari">
+                    <img src="~/Content/imgs/cars/2013-Ferrari-F12-berlinetta-1024x640.jpg" class="card-img-top" alt="ferrari">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Ferrari</h5>
+                    <p class="card-text"></p>
 
+                </div>
+            </div>
+            <div class="card carIcon container p-0 m-2" style="width: 13rem;">
+                <a class="js-search" data-car="Lamborghini">
+                    <img src="~/Content/imgs/cars/Lamborghini-Huracán-Evo-1024x576.jpg" class="card-img-top" alt="Lamborghini">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Lamborghini</h5>
+                    <p class="card-text"></p>
 
-    <p class="bookTxt text-center container">We have 4 stores around the world, check them to see which supercar we have available for your supercar experience!</p>
+                </div>
+            </div>
+            <div class="card carIcon container p-0 m-2" style="width: 13rem;">
+                <a class="js-search" data-car="Bugatti">
+                    <img src="~/Content/imgs/cars/2010_Bugatti_164VeyronSuperSport14-1024x682.jpg" class="card-img-top" alt="Bugatti">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Bugatti</h5>
+                    <p class="card-text"></p>
 
-    <div class="container bookingContainer">
-        <form action="~/Cars/Index" class="form-inline booking pr-0" name="booking">
+                </div>
+            </div>
+            <div class="card carIcon container p-0 m-2" style="width: 13rem;">
+                <a class="js-search" data-car="Aston Martin">
+                    <img src="~/Content/imgs/cars/2019-Aston-Martin-Vantage-V1-1080-1024x576.jpg" class="card-img-top" alt="AstonMartin">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Aston Martin</h5>
+                    <p class="card-text"></p>
 
-
-
-            <div class="formSelect">
-
-
-                <label><span>Store:</span></label>
-                @Html.DropDownList("Store", "Select Store")
-                @*@Html.DropDownListFor(x => x.SelectedStoreId, new SelectList(Model.Stores, "StoreId", "City"), "Select Store")*@
+                </div>
+            </div>
+            <div>
+            <form action="/Cars/Index" class="mt-3 align-bottom">
+                @Html.TextBox("searchString", "", new { placeholder = "Search Other SuperCars" })
+            </form>
 
             </div>
-
-            <div class="mr-2 pt-2 pickUpDate">
-                <label for="checkin"><span>Date:</span></label>
-                <input type="date" value="" id="checkin">
-            </div>
+        </div>
 
 
-            <button type="submit" class="btn btn-secondary checkBtn" id="search">
-                Check
-            </button>
+        <p class="bookTxt text-center container">We have other supercars in 4 stores around the world, check what we have available for your supercar experience!</p>
 
-        </form>
+
+        
+        <div class="container bookingContainer">
+            <form action="~/Cars/Index" class="form-inline booking pr-0" name="booking">
+
+
+
+                <div class="formSelect">
+
+
+                    <label><span>Store:</span></label>
+                    @Html.DropDownList("Store", "Select Store")
+                    @*@Html.DropDownListFor(x => x.SelectedStoreId, new SelectList(Model.Stores, "StoreId", "City"), "Select Store")*@
+
+                </div>
+
+                <div class="mr-2 pt-2 pickUpDate">
+                    <label for="checkin"><span>Date:</span></label>
+                    <input type="date" value="" id="checkin">
+                </div>
+
+
+                <button type="submit" class="btn btn-secondary checkBtn" id="search">
+                    Check
+                </button>
+
+            </form>
+        </div>
     </div>
-</div>
+
+@section scripts{
+   
+    <script>
+        $(document).ready(function () {
+            $(".js-search").on("click", function () {
+
+                 var car = $(this).attr("data-car");
+                $.ajax({
+
+                    url: "/Cars/Index?searchString=" + car,
+                    method: "GET",
+                    success: function () {
+                        console.log("Ok");
+                        location.href = "/Cars/Index?searchString=" + car;
+                    }
+                });
+
+            });
+        });
+
+    </script>
+
+}

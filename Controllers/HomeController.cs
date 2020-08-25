@@ -31,6 +31,8 @@ namespace SuperCarStore.Controllers
             var allCars = db.Cars.ToList();
 
 
+
+
             return View(allCars);
         }
 

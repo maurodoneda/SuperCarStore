@@ -68,22 +68,22 @@ body {
     filter: grayscale(20%);
     overflow-y: scroll;
     background-attachment: fixed;
-}  
+}
 
 
 
 /* ------------- 2 -  Landing Page  ----------------------- */
 
 
-nav .navbar-nav .nav-link{
+nav .navbar-nav .nav-link {
     color: var(--txt-main);
     font-size: 20px;
 }
 
-    nav .navbar-nav .nav-link:hover, .nav-link.active{
+    nav .navbar-nav .nav-link:hover, .nav-link.active {
         color: var(--txt-main);
         font-size: 20px;
-        color:var(--txt-decoration);
+        color: var(--txt-decoration);
         transform: scale(1.1);
         transition: ease-in 0.1s;
     }
@@ -95,11 +95,10 @@ nav .navbar-nav .nav-link{
 
 
 .brand {
-
     display: none;
 }
 
-@media(max-width: 768px){
+@media(max-width: 768px) {
     .brand {
         color: var(--txt-main);
         display: block;
@@ -112,22 +111,18 @@ nav .navbar-nav .nav-link{
         }
 
     .overlayText {
-        display:none;
+        display: none;
     }
-
-  
-
-
 }
 
 
-.navbar-toggler-icon{
-    color:var(--txt-main);
+.navbar-toggler-icon {
+    color: var(--txt-main);
 }
 
 
-.landingPage{
-    height:95vh;
+.landingPage {
+    height: 95vh;
 }
 
 .welcomeText {
@@ -140,21 +135,21 @@ nav .navbar-nav .nav-link{
     transform: scale(1, 1.1);
 }
 
-@media(max-width: 768px){
-      .welcomeText{
-        position:relative;
-        top:15vh;
+@media(max-width: 768px) {
+    .welcomeText {
+        position: relative;
+        top: 15vh;
     }
 }
 
-    .welcomeText span {
-        font-weight: 500;
-        font-size: 60px;
-        font-family: 'Ferro Rosso';
-        color: var(--txt-decoration);
-        font-weight: bolder;
-        font-style: normal;
-    }
+.welcomeText span {
+    font-weight: 500;
+    font-size: 60px;
+    font-family: 'Ferro Rosso';
+    color: var(--txt-decoration);
+    font-weight: bolder;
+    font-style: normal;
+}
 
 .overlayText {
     position: relative;
@@ -168,12 +163,12 @@ nav .navbar-nav .nav-link{
 }
 
 .underLine {
-    border:1px solid;
-    margin:0 auto;
+    border: 1px solid;
+    margin: 0 auto;
     width: 60vw;
     max-width: 450px;
     color: var(--txt-decoration);
-    position:relative;
+    position: relative;
     top: -20px;
 }
 
@@ -292,11 +287,11 @@ input[type="date"]:after {
     }
 
 
-.bookTxt{
-    position:relative;
-    top:-100px;
-    width:520px;
-    font-size:20px;
+.bookTxt {
+    position: relative;
+    top: -100px;
+    width: 520px;
+    font-size: 20px;
 }
 
 
@@ -383,7 +378,6 @@ input[type="date"]:after {
             width: 320px;
             font-size: 12px;
         }
-
     }
 }
 
@@ -391,40 +385,40 @@ input[type="date"]:after {
 
 
 
-    /*----------- Footer ------- */
+/*----------- Footer ------- */
 
 
-    footer {
-        color: var(--txt-main);
-        background: rgba(91,8,15, 0.4);
-        padding-top: 10px;
-    }
+footer {
+    color: var(--txt-main);
+    background: rgba(91,8,15, 0.4);
+    padding-top: 10px;
+}
 
-    /* ------------- 2 -  Other Pages  ----------------------- */
-
-
-    .pages {
-        padding-top: 100px;
-        padding-bottom: 70px;
-        color: var(--txt-main);
-    }
+/* ------------- 2 -  Other Pages  ----------------------- */
 
 
-    .table, .card {
-        font-size: 1rem;
-        font-style: italic;
-        background: none;
-        border: none;
-        border-radius: 10px;
-    }
+.pages {
+    padding-top: 100px;
+    padding-bottom: 70px;
+    color: var(--txt-main);
+}
 
-    /*.table td, .card{
+
+.table, .card {
+    font-size: 1rem;
+    font-style: italic;
+    background: none;
+    border: none;
+    border-radius: 10px;
+}
+
+/*.table td, .card{
     padding:20px;
 }*/
 
 
 
-    /* --------------  Cars Page  ----------------------- */
+/* --------------  Cars Page  ----------------------- */
 
 .cardContainer {
     margin-bottom: 10px;
@@ -434,10 +428,10 @@ input[type="date"]:after {
     border-top-left-radius: 10px;
 }
 
-        .cardContainer:hover {
-            transform: scale(1.01);
-            transition: ease-in 0.2s;
-        }
+    .cardContainer:hover {
+        transform: scale(1.01);
+        transition: ease-in 0.2s;
+    }
 
 
 .cardBody {
@@ -446,69 +440,67 @@ input[type="date"]:after {
     background: rgba(255,255,255, 0.4);
 }
 
-    .cardImg {
-       
-        border-top-left-radius: 10px;
-        width: 480px;
-    }
+.cardImg {
+    border-top-left-radius: 10px;
+    width: 480px;
+}
 
 
 
-    .cardDetails {
-        padding-top: 20px;
-        margin: 0;
-        font-size: 14px;
-        background: rgba(255,255,255,0.4);
-        vertical-align: middle;
-    }
+.cardDetails {
+    padding-top: 20px;
+    margin: 0;
+    font-size: 14px;
+    background: rgba(255,255,255,0.4);
+    vertical-align: middle;
+}
 
 .card-block {
     display: grid;
-    grid-template-areas: "cardDetails description buttons"
-                        "bottomInfo bottomInfo bottomInfo";
+    grid-template-areas: "cardDetails description buttons" "bottomInfo bottomInfo bottomInfo";
     grid-template-columns: 20% 60% 20%;
     /*max-height: 200px;*/
 }
 
-    .description {
-        display: flex;
-        justify-content: center;
-        align-self: center;
-        overflow-wrap: break-word;
-    }
+.description {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    overflow-wrap: break-word;
+}
 
-    .carMake {
-        font-family: "Ferro Rosso";
-        color: black;
-        font-size: 30px;
-        background: rgba(255,255,255,0.4);
-        margin-bottom: 0;
-        margin-left: 0;
-    }
+.carMake {
+    font-family: "Ferro Rosso";
+    color: black;
+    font-size: 30px;
+    background: rgba(255,255,255,0.4);
+    margin-bottom: 0;
+    margin-left: 0;
+}
 
-    .carModel {
-        font-weight: 700;
-        font-style: italic;
-        font-size: 20px;
-        color: var(--txt-decoration);
-        background: rgba(255,255,255,0.4);
-        padding: 0 0 10px 0;
-        margin-top: 0;
-    }
+.carModel {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--txt-decoration);
+    background: rgba(255,255,255,0.4);
+    padding: 0 0 10px 0;
+    margin-top: 0;
+}
 
-    dt {
-        color: black;
-    }
+dt {
+    color: black;
+}
 
-    dd {
-        color: var(--txt-decoration);
-    }
+dd {
+    color: var(--txt-decoration);
+}
 
-    .actionBtns a {
-        position: relative;
-        top: 12%;
-        width: 85px;
-    }
+.actionBtns a {
+    position: relative;
+    top: 12%;
+    width: 85px;
+}
 
 .bottomInfo {
     background: rgba(255,255,255,0.6);
@@ -518,76 +510,74 @@ input[type="date"]:after {
     font-size: 20px;
 }
 
-.bottomInfo .carInfo{
-    color: var(--txt-decoration);
-    font-size:20px;
+    .bottomInfo .carInfo {
+        color: var(--txt-decoration);
+        font-size: 20px;
+    }
+
+
+@media(max-width:467px) {
+    .cardImg {
+        width: 100%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .descContainer {
+        height: 250px;
+        margin-bottom: 2px;
+    }
+
+    .cardBody, .card-block {
+        display: flex;
+        flex-flow: column;
+        max-height: 700px;
+    }
+
+    .cardDetails {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .bottomInfo {
+        background: rgba(255,255,255,0.6);
+        color: black;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-size: 14px;
+    }
+
+        .bottomInfo .carInfo {
+            color: var(--txt-decoration);
+            font-size: 14px;
+            position: relative;
+            left: -15px;
+        }
 }
 
 
-    @media(max-width:467px) {
-        .cardImg {
-            width: 100%;
-            border-top-right-radius: 10px;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 0px;
-        }
 
-        .descContainer {
-            height: 250px;
-            margin-bottom: 2px;
-        }
+/*-------Edit Section --------------*/
 
-        .cardBody, .card-block {
-            display: flex;
-            flex-flow: column;
-            max-height: 700px;
-        }
+.editContainer {
+    height: 90vh;
+    overflow-y: auto;
+}
 
-        .cardDetails {
-            display: inline-flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-        }
 
-        .bottomInfo {
-            background: rgba(255,255,255,0.6);
-            color: black;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            font-size: 14px;
-          
-        }
-
-            .bottomInfo .carInfo {
-                color: var(--txt-decoration);
-                font-size: 14px;
-                position:relative;
-                left:-15px;
-            }
-
+    .editContainer .form-control {
+        width: 230px;
     }
 
-
-
-    /*-------Edit Section --------------*/
-
-    .editContainer {
-        height: 90vh;
-        overflow-y: auto;
+    .editContainer .btn-secondary {
+        width: 230px;
     }
 
-
-        .editContainer .form-control {
-            width: 230px;
-        }
-
-        .editContainer .btn-secondary {
-            width: 230px;
-        }
-
-        .editContainer .btn-primary {
-            width: 150px;
-        }
+    .editContainer .btn-primary {
+        width: 150px;
+    }
 
 
 
@@ -595,7 +585,6 @@ input[type="date"]:after {
 
 
 .detailsCard .cardDetails {
-
     padding-top: 20px;
     margin: 0;
     font-size: 14px;
@@ -621,6 +610,25 @@ input[type="date"]:after {
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     width: 600px;
-    
 }
 
+.iconsContainer {
+    position: relative;
+    top: -140px;
+    color: var(--txt-decoration);
+    justify-content:center;
+}
+
+    .iconsContainer .carIcon img {
+        height: 120px;
+        border-radius: 20%;
+    }
+
+        .iconsContainer .carIcon img:hover {
+            cursor: pointer;
+        }
+
+.carIcon {
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 20%;
+}
